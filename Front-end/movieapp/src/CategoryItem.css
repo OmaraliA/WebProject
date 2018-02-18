@@ -1,0 +1,32 @@
+.cards{
+  margin-left: 110px;
+  display: inline-block;
+  width: 400px;
+}
+
+.card1 {
+  height:150px;
+  border-radius: 15px;
+  background-color: white;
+  width: 350px;
+
+}
+.card2{
+  height:150px;
+  border-radius: 15px;
+  background-color: white;
+   width: 350px;
+
+}
+.card3 {
+  height:150px;
+  border-radius: 15px;
+  background-color: white;
+   width: 350px;
+
+}
+
+p{
+  text-align: center;
+  padding-top: 50px;
+}

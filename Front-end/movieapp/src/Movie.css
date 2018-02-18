@@ -1,0 +1,31 @@
+
+html,body{
+	height:100%;
+	width:100%;
+}
+body{
+	margin: 0 0 0 0;
+	padding:0 0 0 0;
+}
+.main { 
+	width:100%;
+  	float: left;
+    margin-right: -200px;
+   overflow: hidden;
+   height: 1000px;
+} 
+
+
+.Left {
+	 width:20%;
+	 float:left;
+	background-color: black;
+	position: fixed;
+}
+
+.Right {
+	
+	 width: 80%;
+ float: right;
+background-color: red;
+}
