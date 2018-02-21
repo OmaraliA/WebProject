@@ -16,20 +16,23 @@ import './Movie.css';
 
 class Movie extends Component {
 
-  apiKey: '67f7450bf1422bdcbf1d6b79ce7f1da1'
-
-  getInitialState: function() {
-    return {searchTerm:"", searchUrl:""};
+  constructor(props){
+    super(props);
+    this.state = {
+      searchTerm:"", searchUrl:""
+    }
   }
 
-  handleKeyUp :function(e){
+  apiKey: '67f7450bf1422bdcbf1d6b79ce7f1da1'
+  
+  handleKeyUp(e){
     if (e.key === 'Enter' && this.state.searchTerm !== '') {
       var searchUrl = "search/multi?query=" + this.state.searchTerm + "&api_key=" + this.apiKey;
       this.setState({searchUrl:searchUrl});
     }
   }
 
-  handleChange : function(e){
+  handleChange(e){
       this.setState({searchTerm : e.target.value});    
   }
 
@@ -51,7 +54,7 @@ class Movie extends Component {
         </div>
 
         <div className="Bottom">
-          <TitleList title="Search Results" url={this.state.searchUrl} />
+        <ContentView title="Search Results" url={this.state.searchUrl} />
         <ContentView title="Top TV picks for Jack" url='discover/tv?sort_by=popularity.desc&page=1' />
         <ContentView title="Trending now" url='discover/movie?sort_by=popularity.desc&page=1' />
         <ContentView title="Most watched in Horror" url='genre/27/movies?sort_by=popularity.desc&page=1' />

@@ -15,13 +15,10 @@ import './Header.css';
 
 class Header extends Component {
 
-     constructor(){
+  constructor(){
     super();
-    this.state = 
-    {
-    	filterText: ''
-  	};
-}
+    this.state = { filterText: ''};
+  }
 
   render() {
     return (

@@ -16,11 +16,12 @@ class ContentView extends Component {
 
 	apiKey: '67f7450bf1422bdcbf1d6b79ce7f1da1'
 
-      getInitialState: function() {
-        return {data: [], mounted: false};
-      }
-
-      loadContent: function() {
+	constructor(props){
+		super(props);
+		this.state = {data: [], mounted: false}
+	}
+	
+      loadContent() {
         var requestUrl = 'https://api.themoviedb.org/3/' + this.props.url + '&api_key=' + this.apiKey;
         fetch(requestUrl).then((response)=>{
             return response.json();
@@ -31,7 +32,7 @@ class ContentView extends Component {
         });
       }
 
-      componentWillReceiveProps : function(nextProps){
+      componentWillReceiveProps(nextProps){
         if(nextProps.url !== this.props.url && nextProps.url !== ''){
           this.setState({mounted:true,url:nextProps.url},()=>{
             this.loadContent();
@@ -40,7 +41,7 @@ class ContentView extends Component {
         }
       }
 
-      componentDidMount: function() {
+      componentDidMount() {
         if(this.props.url !== ''){
           this.loadContent();
           this.setState({mounted:true});
@@ -48,7 +49,7 @@ class ContentView extends Component {
         
       }
 
-      render: function() {
+      render() {
         var titles ='';
         if(this.state.data.results) {
           titles = this.state.data.results.map(function(title, i) {

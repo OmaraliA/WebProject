@@ -13,7 +13,7 @@ import './CategoryItem.css';
 
 
 class CategoryItem extends Component {
-  render: function() {
+  render() {
     return (
       <div className="Item" style={{backgroundImage: 'url(' + this.props.backdrop + ')'}} >
         <div className="overlay">
