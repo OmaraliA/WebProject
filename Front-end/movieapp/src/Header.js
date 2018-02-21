@@ -26,9 +26,6 @@ class Header extends Component {
   render() {
     return (
     	<div className="header"> 
-    		<div className="searching">
-       			<SearchBar filterText={this.state.filterText} />
-       		</div>
 
        		<div className="login">
         		<Login/>

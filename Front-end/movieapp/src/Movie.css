@@ -29,3 +29,16 @@ body{
  float: right;
 background-color: red;
 }
+
+.Top {
+	 height:15%;
+	 float:left;
+	 width: 100%;
+	background-color: blue;
+	position: fixed;
+}
+
+.Bottom {
+	margin-top: 15%;
+	background-color: red;
+}

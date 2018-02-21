@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import CategoryItem from './CategoryItem';
@@ -18,13 +17,10 @@ class SearchBar extends Component {
 
   render() {
     return (
-    	<div> 
-       		<div>
-       			<input type="search" className="search"
-     	            placeholder="                                                 search"/>
-     	    </div> 
-       
-    	</div>
+    	<div id="search" className="Search">
+        <input onKeyUp={this.handleKeyUp} onChange={this.handleChange} 
+                type="search" placeholder="Search for a title..." value={this.state.searchTerm}/>
+        </div> 
     );
   }
 }

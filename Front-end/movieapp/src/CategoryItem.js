@@ -8,26 +8,22 @@ import Menu from './Menu';
 import MenuItem from './MenuItem';
 import Register from './Register';
 import SearchBar from './SearchBar';
+import ListToggle from './ListToggle'
 import './CategoryItem.css';
 
 
 class CategoryItem extends Component {
-  render() {
+  render: function() {
     return (
-    	<div>      		
-	  
-		  <div className="cards">
-			  <div className="card1"><p>Item1</p></div>
-			  <div className="card2"><p>Item2</p></div>
-			  <div className="card3"><p>Item3</p></div>
-		  </div>
-		<div className="cards">
-			  <div className="card1"><p>Item4</p></div>
-			  <div className="card2"><p>Item5</p></div>
-			  <div className="card3"><p>Item6</p></div>
-		  </div>
-		</div>
+      <div className="Item" style={{backgroundImage: 'url(' + this.props.backdrop + ')'}} >
+        <div className="overlay">
+          <div className="title">{this.props.title}</div>
+          <div className="rating">{this.props.score} / 10</div>
+          <div className="plot">{this.props.overview}</div>
+          <ListToggle />
+        </div>
+      </div>
     );
-  }
+}
 }
 export default CategoryItem;
