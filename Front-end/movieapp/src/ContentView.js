@@ -19,14 +19,15 @@ class ContentView extends Component {
 	constructor(props){
 		super(props);
 		this.state = {data: [], mounted: false}
+		this.loadContent = this.loadContent.bind(this);
 	}
-	
+
       loadContent() {
         var requestUrl = 'https://api.themoviedb.org/3/' + this.props.url + '&api_key=' + this.apiKey;
-        fetch(requestUrl).then((response)=>{
-            return response.json();
-        }).then((data)=>{
-            this.setState({data : data});
+        fetch(requestUrl)
+        .then(response=>response.json())
+        .then((data)=>{
+            this.setState({data : data})
         }).catch((err)=>{
             console.log("There has been an error");
         });

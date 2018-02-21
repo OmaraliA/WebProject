@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import CategoryItem from './CategoryItem';
@@ -12,8 +11,6 @@ import Register from './Register';
 import SearchBar from './SearchBar';
 import './Movie.css';
 
-
-
 class Movie extends Component {
 
   constructor(props){
@@ -21,19 +18,21 @@ class Movie extends Component {
     this.state = {
       searchTerm:"", searchUrl:""
     }
+    this.handleChange = this.handleChange.bind(this); 
+    this.handleKeyUp = this.handleKeyUp.bind(this); 
   }
 
   apiKey: '67f7450bf1422bdcbf1d6b79ce7f1da1'
-  
+
   handleKeyUp(e){
     if (e.key === 'Enter' && this.state.searchTerm !== '') {
       var searchUrl = "search/multi?query=" + this.state.searchTerm + "&api_key=" + this.apiKey;
-      this.setState({searchUrl:searchUrl});
+      this.setState({searchUrl: searchUrl});
     }
   }
 
   handleChange(e){
-      this.setState({searchTerm : e.target.value});    
+      this.setState({searchTerm: e.target.value});    
   }
 
   render() {
@@ -56,7 +55,7 @@ class Movie extends Component {
         <div className="Bottom">
         <ContentView title="Search Results" url={this.state.searchUrl} />
         <ContentView title="Top TV picks for Jack" url='discover/tv?sort_by=popularity.desc&page=1' />
-        <ContentView title="Trending now" url='discover/movie?sort_by=popularity.desc&page=1' />
+        <ContentView title="Trending now" url='discover/movie?sort_by=popularity.desc' />
         <ContentView title="Most watched in Horror" url='genre/27/movies?sort_by=popularity.desc&page=1' />
         <ContentView title="Sci-Fi greats" url='genre/878/movies?sort_by=popularity.desc&page=1' />
         <ContentView title="Comedy magic" url='genre/35/movies?sort_by=popularity.desc&page=1' />

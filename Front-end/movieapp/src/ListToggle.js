@@ -13,6 +13,7 @@ class ListToggle extends Component {
 	constructor(props){
 		super(props);
 		this.state ={toggled: false}
+		this.handleClick = this.handleClick.bind(this);
 	}
 
   	handleClick() {
