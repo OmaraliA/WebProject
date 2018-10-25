@@ -1,8 +1,4 @@
-
-
-
-
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import CategoryItem from './CategoryItem';
 import ContentView from './ContentView';
@@ -13,17 +9,13 @@ import Register from './Register';
 import SearchBar from './SearchBar';
 import './Content.css';
 
-
 class Content extends Component {
-    
-
   render() {
     return (
     	<div className="Content">
     		<div className="Top">
     			<Header/>
     		</div>
-
     		<div className="Bottom">
     			<ContentView/>
     		</div>
@@ -31,5 +23,5 @@ class Content extends Component {
     );
   }
 }
-export default Content;
 
+export default Content;
