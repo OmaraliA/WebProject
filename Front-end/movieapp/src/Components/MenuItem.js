@@ -21,8 +21,6 @@ import '../css/MenuItem.css';
 
 
 class MenuItem extends Component {
-    
-
   render() {
     return (
       

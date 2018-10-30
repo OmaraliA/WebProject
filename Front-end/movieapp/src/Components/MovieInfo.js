@@ -17,7 +17,6 @@ class MovieInfo extends Component {
 
   handleInput(e){
     this.setState({commentText: e.target.value});
-    console.log(this.state.commentText);
   }
 
   handleClick(e){
@@ -31,12 +30,12 @@ class MovieInfo extends Component {
   }
 
   render() {
+    const {movie} = this.props;
      var items = this.state.comments.map((comment, index) =>
       <li key={index}>
       <label> Guest: {comment.text}</label>
       </li>
     )
-    console.log(items);
     return (
 
 <div className="all">
@@ -44,13 +43,13 @@ class MovieInfo extends Component {
 <div className="inside">
       <div className= "info">
       <div className="images">
-       <img className="img" alt = "img" src={this.props.movie.img}/>
+       <img className="img" alt = "img" src={movie.img}/>
        </div>
 
       <div className="desk">
-        <p className="names">{this.props.movie.name}</p>
+        <p className="names">{movie.name}</p>
        
-        <p className="name">{this.props.movie.description}<br/>
+        <p className="name">{movie.description}<br/>
  
         <a href="http://facebook.com"> <i id="icons" class="facebook square icon"></i></a>
        <a href="http://whatsapp.com">  <i id="icons" class="whatsapp icon"></i></a>

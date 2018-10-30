@@ -6,9 +6,7 @@ class Horror extends Component {
     return (
       <div className ="comedies">
           <h1 className="title">Horror films</h1>   
-        <p className="App-intro">
-          
-        </p>
+          <p className="App-intro"/>
       </div>
     );
   }

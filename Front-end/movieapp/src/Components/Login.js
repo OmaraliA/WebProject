@@ -1,44 +1,29 @@
-  
-
-
-
 import React, { Component } from 'react';
 import '../css/Login.css';
-
-
-
 
 class Login extends Component {
     
   constructor(props){
-  super(props);
+    super(props);
 
-  this.state={
-    username:'',
-    password:'',
-    priv:"Login",
-    name:'',
-  
-  }
-
-
-
-  this.handleClick = this.handleClick.bind(this);
-  this.handleOutsideClick = this.handleOutsideClick.bind(this);
-  this.handleLogin = this.handleLogin.bind(this);
-   this.handleClickLogin = this.handleClick.bind(this);
-  this.state = {
+    this.state={
+      username:'',
+      password:'',
+      priv:"Login",
+      name:'',
       popupVisible: false,
-     isToggleOn: true
-    };
+      isToggleOn: true
+    }
 
-  
+    this.handleClick = this.handleClick.bind(this);
+    this.handleOutsideClick = this.handleOutsideClick.bind(this);
+    this.handleLogin = this.handleLogin.bind(this);
+    this.handleClickLogin = this.handleClick.bind(this);
   }
 
     handleClickLogin() {
-    this.setState(function(prevState) {
-      return {isToggleOn: !prevState.isToggleOn};
-    });
+      this.setState(prevState => ({isToggleOn: !prevState.isToggleOn}));
+    }
   }
 
   handleLogin(){
@@ -90,7 +75,7 @@ class Login extends Component {
 
 
   render() {
-    console.log(this.state.priv)
+    const {username, password} = this.state;
     return (
       <div className="container" >
         
@@ -114,13 +99,13 @@ class Login extends Component {
         <div class="field">
           <div class="ui left icon input">
             <i class="user icon"></i>
-            <input type="text" name="email" value={this.state.username} onChange = {this.handleChangesName.bind(this)} placeholder="E-mail address"/>
+            <input type="text" name="email" value={username} onChange = {this.handleChangesName.bind(this)} placeholder="E-mail address"/>
           </div>
         </div>
         <div class="field">
           <div class="ui left icon input">
             <i class="lock icon"></i>
-            <input type="password" name="password" value={this.state.password}  onChange = {this.handleChangesPassword.bind(this)} placeholder="Password"/>
+            <input type="password" name="password" value={password}  onChange = {this.handleChangesPassword.bind(this)} placeholder="Password"/>
           </div>
         </div>
         <div class="ui fluid large inverted blue submit button" onClick ={this.handleLogin.bind(this)}> Login</div>

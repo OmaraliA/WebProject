@@ -11,15 +11,14 @@ import Register from './Register';
 
 import '../css/Header.css';
 
-
-
 class Header extends Component {
 
   constructor(){
     super();
-    this.state = { filterText: ''};
+    this.state = {filterText: ''};
   }
-   handleUserInput(searchTerm){
+
+  handleUserInput(searchTerm){
     this.setState({filterText:searchTerm})
   }
 
@@ -27,18 +26,13 @@ class Header extends Component {
     return (
     	<div className="header"> 
           <div className ="searching">
-          
-
           </div>
-
           <div className="login">
             <Login/>
           </div>
-
           <div className="register">
            	<Register/>
           </div>
-
       </div>
     );
   }

@@ -4,14 +4,14 @@ import '../css/Content.css';
 
 
 class Content extends Component {
-    
-
   render() {
+    const {movies, filterText} = this.props;
     return (
     	<div className="Content">
-    	
     		<div className="Bottom">
-    			<ContentView movies = {this.props.movies} filterText={this.props.filterText }/>
+    			<ContentView 
+                    movies = {movies} 
+                    filterText={filterText }/>
     		</div>
     	</div> 
     );
